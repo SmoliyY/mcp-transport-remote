@@ -55,3 +55,7 @@ If the client fails to return the session ID, the server may treat the request a
 ## When to Use
 
 Use Streamable HTTP for remote, multi-tenant, or cloud-hosted MCP servers.
+
+### Session termination
+
+A client ends a session by sending an HTTP `DELETE` to the MCP endpoint with the `Mcp-Session-Id` header. A server may also drop a session on its own after a timeout, so clients should be ready to start a new one.
